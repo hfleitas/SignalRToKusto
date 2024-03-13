@@ -2,8 +2,9 @@
 An Azure Function C# client that processes, via streaming, messages from a SignalR hub (server) and ingests them in realtime to Kusto (ADX/Fabric KQL Database) using Kusto SDK bindings.
 
 ## Usage
-For runing the function locally, create a local file local.settings.json
+For runing the function locally, requires [Azurite](https://marketplace.visualstudio.com/items?itemName=Azurite.azurite) extension in VSCode, open command pallet Azurite: Start
 
+Create a local file local.settings.json
 ```json
 {
     "IsEncrypted": false,
