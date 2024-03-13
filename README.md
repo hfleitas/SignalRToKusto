@@ -4,7 +4,7 @@ An Azure Function C# client that processes, via streaming, messages from a Signa
 ## Usage
 For runing the function locally, requires [Azurite](https://marketplace.visualstudio.com/items?itemName=Azurite.azurite) extension in VSCode, open command pallet Azurite: Start
 
-Create a local file local.settings.json
+Create a local file **local.settings.json**
 ```json
 {
     "IsEncrypted": false,
