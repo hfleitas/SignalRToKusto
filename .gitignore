@@ -187,6 +187,7 @@ _pkginfo.txt
 !*.[Cc]ache/
 
 # Others
+__azurite*
 ClientBin/
 ~$*
 *~
