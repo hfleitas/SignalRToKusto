@@ -1,0 +1,9 @@
+// Create the table
+////////////////////////////////////////////////////////////
+
+.create table TrimbleMaps3 (properties: dynamic) 
+
+// Create mapping command (optional)
+////////////////////////////////////////////////////////////
+.create table ['TrimbleMaps3'] ingestion json mapping 'TrimbleMaps3_mapping' '[{"column":"properties", "Properties":{"Path":"$[\'properties\']"}}]'
+
