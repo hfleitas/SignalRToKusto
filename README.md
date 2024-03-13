@@ -21,7 +21,10 @@ Create a local file **local.settings.json**
     }
 }
 ```
-To run the function locally : ```func start --csharp --port 7104 --verbose```
+To run the function locally : 
+```
+func start --csharp --port 7104 --verbose
+```
 
 ## Refrences
 - [Output binding samples](https://github.com/Azure/Webjobs.Extensions.Kusto/tree/main/samples/samples-csharp/OutputBindingSamples)
