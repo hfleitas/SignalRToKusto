@@ -25,6 +25,7 @@ To run the function locally : ```func start --csharp --port 7104 --verbose```
 
 ## Refrences
 - [Output binding samples](https://github.com/Azure/Webjobs.Extensions.Kusto/tree/main/samples/samples-csharp/OutputBindingSamples)
-- [QueueTrigger sample](https://github.com/Azure/Webjobs.Extensions.Kusto/blob/main/samples/samples-csharp/OutputBindingSamples/QueueImport/QueueTrigger.cs) 
+- [QueueTrigger sample](https://github.com/Azure/Webjobs.Extensions.Kusto/blob/main/samples/samples-csharp/OutputBindingSamples/QueueImport/QueueTrigger.cs)
+- Timer trigger for Azure Functions - [NCronTab Expressions](https://learn.microsoft.com/azure/azure-functions/functions-bindings-timer?tabs=python-v2%2Cisolated-process%2Cnodejs-v4&pivots=programming-language-csharp#ncrontab-expressions)
 - [Trimble Notifications Service API](https://developer.trimblemaps.com/restful-apis/trip-management/notifications-service/)
 - [Console App](https://github.com/hfleitas/app-trimble2kusto/blob/main/notificationsvc/Program.cs)
