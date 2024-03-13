@@ -1,5 +1,5 @@
 # SignalRToKusto
-An Azure Function C# client that processes, via streaming, messages from a SignalR hub (server) and ingest them in realtime to Kusto (ADX/Fabric KQL Database) using Kusto SDK bindings.
+An Azure Function C# client that processes, via streaming, messages from a SignalR hub (server) and ingests them in realtime to Kusto (ADX/Fabric KQL Database) using Kusto SDK bindings.
 
 ## Refrences
 - [Output binding samples](https://github.com/Azure/Webjobs.Extensions.Kusto/tree/main/samples/samples-csharp/OutputBindingSamples)
