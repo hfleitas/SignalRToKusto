@@ -18,7 +18,7 @@ namespace SignalRToKusto
         [FunctionName("TrimbleNotificationToKusto24")]
         public void TrimbleNotificationToKusto(
         [TimerTrigger("* */5 * * * *", RunOnStartup = true)] TimerInfo timer, ILogger logger,
-        [Kusto(Database: "%KustoDB%", TableName = "%KustoTable%", Connection = "KustoConnectionString")] IAsyncCollector<string> notifications)
+        [Kusto(Database: "%KustoDB%", TableName = "%KustoTable%", DataFormat = "txt", Connection = "KustoConnectionString")] IAsyncCollector<string> notifications)
         {
             if (connection == null)
             {
@@ -29,24 +29,24 @@ namespace SignalRToKusto
                     .WithUrl(connectionString)
                     .WithAutomaticReconnect(new[] { TimeSpan.FromSeconds(5) })
                     .Build();
+                // Make this configurable too!
+                string methodName = _configuration.GetValue<string>("MethodName");
+                connection.On<dynamic>(methodName, async (message) =>
+                {
+                    try
+                    {
+                        logger.LogTrace($"Received message: {message}");
+                        notifications.AddAsync(message.ToString());
+                        await notifications.FlushAsync();
+                    }
+                    catch (Exception ex)
+                    {
+                        await connection.StopAsync();
+                        logger.LogError($"Closing connection as there is an error ingesting to Kusto {ex}");
+                    }
+                });
             }
             logger.LogTrace($"Timer trigger function executed at: {DateTime.UtcNow}");
-            // Make this configurable too!
-            string methodName = _configuration.GetValue<string>("MethodName");
-            connection.On<dynamic>(methodName, async (message) =>
-            {
-                try
-                {
-                    logger.LogTrace($"Received message: {message}");
-                    notifications.AddAsync(message.ToString());
-                    await notifications.FlushAsync();
-                }
-                catch (Exception ex)
-                {
-                    await connection.StopAsync();
-                    logger.LogError($"Closing connection as there is an error ingesting to Kusto {ex}");
-                }
-            });
             if (connection.State != HubConnectionState.Connected)
             {
                 logger.LogInformation($"Connection state is {connection.State}, starting hub connection at : {DateTime.UtcNow}");
