@@ -24,7 +24,7 @@ namespace SignalRToKusto
             {
                 string connectionString = _configuration.GetValue<string>("SignalRConnection");
                 // Note: This will print the API Key as well!
-                logger.LogTrace($"Initialized hub connection at : {DateTime.Now} for connectionString");
+                logger.LogTrace($"Initialized hub connection at : {DateTime.Now} for {connectionString}");
                 connection = new HubConnectionBuilder()
                     .WithUrl(connectionString)
                     .WithAutomaticReconnect(new[] { TimeSpan.FromSeconds(5) })
@@ -37,7 +37,7 @@ namespace SignalRToKusto
             {
                 try
                 {
-                    logger.LogInformation($"Received message: {message}");
+                    logger.LogTrace($"Received message: {message}");
                     notifications.AddAsync(message.ToString());
                     await notifications.FlushAsync();
                 }
