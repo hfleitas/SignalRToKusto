@@ -17,7 +17,7 @@ namespace SignalRToKusto
         HubConnection connection = null;
         [FunctionName("TrimbleNotificationToKusto24")]
         public void TrimbleNotificationToKusto(
-        [TimerTrigger("0 */5 * * * *", RunOnStartup = true)] TimerInfo timer, ILogger logger,
+        [TimerTrigger("0 */1 * * * *", RunOnStartup = true)] TimerInfo timer, ILogger logger,
         [Kusto(Database: "%KustoDB%", TableName = "%KustoTable%", Connection = "KustoConnectionString")] IAsyncCollector<string> notifications)
         {
             if (connection == null)
