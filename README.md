@@ -14,7 +14,7 @@ Create a local file **local.settings.json**
         "AzureWebJobsSecretStorageType": "files",
         "AzureWebJobsDashboard": "",
         "KustoConnectionString": "Data Source=https://<kustocluster>.<region>.kusto.windows.net;Database=e2e;Fed=True;AppClientId=<AppId>;AppKey=<AppKey>;Authority Id=<Tenant Id>",
-        "SignalRConnection": "https://notifications.trimblemaps.com/register?apikey=<APIKey>",
+        "SignalRConnection": "https://<websocket-category-url>/register?apikey=<APIKey>",
         "MethodName":"notificationMessage",
         "KustoDB": "<DatabaseName>",
         "KustoTable": "<TableName>"
