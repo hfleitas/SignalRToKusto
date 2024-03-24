@@ -5,7 +5,7 @@ Dotnet Azure Function that streams messages from a SignalR websocket server to K
 - [Azurite](https://marketplace.visualstudio.com/items?itemName=Azurite.azurite) extension in VSCode is required for runing the function locally, if local setting `AzureWebJobsStorage` is set to `UseDevelopmentStorage=true`. Open command pallet and choose > Azurite: Start. 
 - If Azurerite fails to start the Blob service local emulator, then set `AzureWebJobsStorage` to use an actual Azure Storage Account access key connection string. ie. `DefaultEndpointsProtocol=https;AccountName=<AccountName>;AccountKey=<Key>;EndpointSuffix=core.windows.net`
 
-Create a local file **local.settings.json**
+Create a local file **local.settings.json** with your setting values.
 ```json
 {
     "IsEncrypted": false,
