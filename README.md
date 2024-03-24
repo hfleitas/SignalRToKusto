@@ -9,7 +9,7 @@ Create a local file **local.settings.json**
 {
     "IsEncrypted": false,
     "Values": {
-        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true", //or azure storage account access key connection string.
         "FUNCTIONS_WORKER_RUNTIME": "dotnet",
         "AzureWebJobsSecretStorageType": "files",
         "AzureWebJobsDashboard": "",
@@ -39,7 +39,9 @@ To run the function locally 👟:
 func start --csharp --port 7104 --verbose
 ```
 
-To deploy the function 🚀 (can deploy to an existing function & app service plan, or create a new function prior):
+To deploy the function 🚀: 
+- Can deploy to an existing function & app service plan, or create a new function prior.
+- Setup the enviroment variables similarly to your `local.settings.json` using an azure storage account access key connection string.
 ```
 winget install -e --id Microsoft.AzureCLI
 Az Login
