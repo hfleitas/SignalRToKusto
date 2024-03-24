@@ -21,9 +21,30 @@ Create a local file **local.settings.json**
     }
 }
 ```
+
+Install dependencies:
+
+Before you run the function locally, install dependencies exact versions. Use the VSCode NuGet package manager to add them to your project settings. 
+
+VSCode terminal commands:
+```
+dotnet add package Microsoft.AspNetCore.SignalR.Client --version 6.0.2
+dotnet add package Microsoft.Azure.WebJobs.Extensions.Kusto --version 1.0.9-Preview
+dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage --version 5.2.2
+dotnet add package Microsoft.NET.Sdk.Functions --version 4.3.0
+```
+
 To run the function locally : 
 ```
 func start --csharp --port 7104 --verbose
+```
+
+To deploy the function:
+```
+winget install -e --id Microsoft.AzureCLI
+Az login
+# pre-create az function
+func azure functionapp publish <your-az-function-name>
 ```
 
 ## Refrences
