@@ -23,7 +23,7 @@ Create a local file **local.settings.json**
 }
 ```
 
-Install dependencies 💿:
+Install dependencies 📦:
 
 - Before you run the function locally install these exact versions.
 - Use the VSCode extenstion NuGet package manager to add them. It will automatically include them as Package References in your project file. ie. [SignalRToKusto.csproj](SignalRToKusto.csproj). 
