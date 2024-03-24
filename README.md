@@ -2,7 +2,8 @@
 An Azure Function C# client that processes, via streaming, messages from a SignalR hub (server) and ingests them in realtime to Kusto (ADX/Fabric KQL Database) using Kusto SDK bindings.
 
 ## Usage 💻
-For runing the function locally with storage set to `UseDevelopmentStorage=true` it requires [Azurite](https://marketplace.visualstudio.com/items?itemName=Azurite.azurite) extension in VSCode, open command pallet Azurite: Start. If Azurerite fails to start the Blob service local emulator, then set `AzureWebJobsStorage` to use an actual Azure Storage Account access key connection string. ie. `DefaultEndpointsProtocol=https;AccountName=<AccountName>;AccountKey=<Key>;EndpointSuffix=core.windows.net`
+- [Azurite](https://marketplace.visualstudio.com/items?itemName=Azurite.azurite) extension in VSCode is required for runing the function locally, if local setting `AzureWebJobsStorage` is set to `UseDevelopmentStorage=true`. Open command pallet and choose > Azurite: Start. 
+- If Azurerite fails to start the Blob service local emulator, then set `AzureWebJobsStorage` to use an actual Azure Storage Account access key connection string. ie. `DefaultEndpointsProtocol=https;AccountName=<AccountName>;AccountKey=<Key>;EndpointSuffix=core.windows.net`
 
 Create a local file **local.settings.json**
 ```json
