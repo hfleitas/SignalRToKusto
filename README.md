@@ -23,12 +23,11 @@ Create a local file **local.settings.json**
 }
 ```
 
-Install dependencies 📦:
+To install dependencies 📦:
 
 - Before you run the function locally install these exact versions.
 - Use the VSCode extenstion NuGet package manager to add them. It will automatically include them as Package References in your project file. ie. [SignalRToKusto.csproj](SignalRToKusto.csproj). 
-
-VSCode terminal commands:
+- VSCode terminal commands:
 ```
 dotnet add package Microsoft.AspNetCore.SignalR.Client --version 6.0.2
 dotnet add package Microsoft.Azure.WebJobs.Extensions.Kusto --version 1.0.9-Preview
