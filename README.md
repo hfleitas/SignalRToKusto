@@ -14,8 +14,8 @@ Create a local file **local.settings.json**
         "AzureWebJobsSecretStorageType": "files",
         "AzureWebJobsDashboard": "",
         "KustoConnectionString": "Data Source=https://<kustocluster>.<region>.kusto.windows.net;Database=e2e;Fed=True;AppClientId=<AppId>;AppKey=<AppKey>;Authority Id=<Tenant Id>",
-        "SignalRConnection": "https://<websocket-category-url>/register?apikey=<APIKey>",
-        "MethodName":"notificationMessage",
+        "SignalRConnection": "https://<websocket-client-url>/register?apikey=<APIKey>",
+        "MethodName":"<SignalRMethodName>",
         "KustoDB": "<DatabaseName>",
         "KustoTable": "<TableName>"
     }
@@ -45,7 +45,7 @@ winget install -e --id Microsoft.AzureCLI
 Az Login
 Connect-AzAccount -TenantId <your-tenatnt-id>
 Set-AzContext -SubscriptionName <your-subcription-name>
-func azure functionapp publish <your-az-function-name>
+func azure functionapp publish <your-az-function-name> -subscription <your-subcription-name>
 ```
 
 ## Refrences 📑
