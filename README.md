@@ -1,5 +1,5 @@
 # 🚦 SignalR to Kusto 🤿
-An Azure Function c-sharp client that streams messages from a SignalR websocket server to Kusto (Azure Data Explorer/Synapse DX Pool/Fabric KQL Database) in realtime using Kusto SDK bindings.
+Dotnet Azure Function that streams messages from a SignalR websocket server to Kusto (Azure Data Explorer/Synapse DX Pool/Fabric KQL Database) in realtime using Kusto SDK bindings.
 
 ## Usage 💻
 - [Azurite](https://marketplace.visualstudio.com/items?itemName=Azurite.azurite) extension in VSCode is required for runing the function locally, if local setting `AzureWebJobsStorage` is set to `UseDevelopmentStorage=true`. Open command pallet and choose > Azurite: Start. 
@@ -25,7 +25,8 @@ Create a local file **local.settings.json**
 
 Install dependencies 💿:
 
-Before you run the function locally, install dependencies exact versions. Use the VSCode NuGet package manager to add them to your project settings. 
+- Before you run the function locally install these exact versions.
+- Use the VSCode extenstion NuGet package manager to add them. It will automatically include them as Package References in your project file. ie. [SignalRToKusto.csproj](SignalRToKusto.csproj). 
 
 VSCode terminal commands:
 ```
