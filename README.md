@@ -2,6 +2,7 @@
 Dotnet Azure Function that streams messages from a SignalR websocket server to Kusto (Azure Data Explorer/Synapse DX Pool/Fabric KQL Database) in realtime using Kusto SDK bindings.
 
 ## Usage 💻
+- RTI Saturday Presentation: [1000s of Trucks a Day in Microsoft Fabric](https://github.com/hfleitas/app-trimble2kusto/blob/main/1000s%20of%20Trucks%20a%20Day%20in%20Microsoft%20Fabric.pdf)
 - [Azurite](https://marketplace.visualstudio.com/items?itemName=Azurite.azurite) extension in VSCode is required for runing the function locally, if local setting `AzureWebJobsStorage` is set to `UseDevelopmentStorage=true`. Open command pallet and choose > Azurite: Start. 
 - If Azurerite fails to start the Blob service local emulator, then set `AzureWebJobsStorage` to use an actual Azure Storage Account access key connection string. ie. `DefaultEndpointsProtocol=https;AccountName=<AccountName>;AccountKey=<Key>;EndpointSuffix=core.windows.net`
 
